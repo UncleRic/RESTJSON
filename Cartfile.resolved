@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "4.5.1"
+github "bryx-inc/BRYXBanner" "0.7.3"
+github "matthewpalmer/Locksmith" "3.0.0"
+github "pinterest/PINCache" "2.3"
+github "pinterest/PINRemoteImage" "2.1.4"
+github "xmartlabs/XLForm" "3.3.0"

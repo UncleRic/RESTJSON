@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire"
+github "pinterest/PINRemoteImage"
+github "matthewpalmer/Locksmith"
+github "xmartlabs/XLForm"
+github "bryx-inc/BRYXBanner"
