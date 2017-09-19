@@ -19,13 +19,13 @@
 		18268C631F718BDA00587ABD /* BRYXBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18268C551F7188A000587ABD /* BRYXBanner.framework */; };
 		18268C641F718BDA00587ABD /* BRYXBanner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18268C551F7188A000587ABD /* BRYXBanner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18268C661F718BE100587ABD /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18268C531F71888F00587ABD /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18268C6B1F719EFB00587ABD /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18268C6A1F719EFB00587ABD /* GitHubAPIManager.swift */; };
 		CF015B0A1DC522DA00C0BA3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF015B091DC522DA00C0BA3D /* AppDelegate.swift */; };
 		CF015B0C1DC522DA00C0BA3D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF015B0B1DC522DA00C0BA3D /* MasterViewController.swift */; };
 		CF015B0E1DC522DA00C0BA3D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF015B0D1DC522DA00C0BA3D /* DetailViewController.swift */; };
 		CF015B111DC522DA00C0BA3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF015B0F1DC522DA00C0BA3D /* Main.storyboard */; };
 		CF015B131DC522DA00C0BA3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF015B121DC522DA00C0BA3D /* Assets.xcassets */; };
 		CF015B161DC522DA00C0BA3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF015B141DC522DA00C0BA3D /* LaunchScreen.storyboard */; };
-		CF015B1E1DC5235C00C0BA3D /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF015B1D1DC5235C00C0BA3D /* GitHubAPIManager.swift */; };
 		CF015B201DC5237C00C0BA3D /* GistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF015B1F1DC5237C00C0BA3D /* GistRouter.swift */; };
 		CF015B221DC5248800C0BA3D /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF015B211DC5248800C0BA3D /* Gist.swift */; };
 		CFF21C6D1DC53451006E3D55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF21C6C1DC53451006E3D55 /* LoginViewController.swift */; };
@@ -62,6 +62,7 @@
 		18268C591F7188CB00587ABD /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		18268C5B1F7188DB00587ABD /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		18268C691F718DAA00587ABD /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		18268C6A1F719EFB00587ABD /* GitHubAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
 		CF015B061DC522DA00C0BA3D /* grokSwiftREST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grokSwiftREST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF015B091DC522DA00C0BA3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF015B0B1DC522DA00C0BA3D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		CF015B121DC522DA00C0BA3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF015B151DC522DA00C0BA3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF015B171DC522DA00C0BA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF015B1D1DC5235C00C0BA3D /* GitHubAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
 		CF015B1F1DC5237C00C0BA3D /* GistRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistRouter.swift; sourceTree = "<group>"; };
 		CF015B211DC5248800C0BA3D /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		CFF21C6C1DC53451006E3D55 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -133,13 +133,13 @@
 		CF015B081DC522DA00C0BA3D /* grokSwiftREST */ = {
 			isa = PBXGroup;
 			children = (
+				18268C6A1F719EFB00587ABD /* GitHubAPIManager.swift */,
 				CFF21C701DC53C94006E3D55 /* grokSwiftREST.entitlements */,
 				CF015B091DC522DA00C0BA3D /* AppDelegate.swift */,
 				CF015B0B1DC522DA00C0BA3D /* MasterViewController.swift */,
 				CF015B0D1DC522DA00C0BA3D /* DetailViewController.swift */,
 				CFF21C6C1DC53451006E3D55 /* LoginViewController.swift */,
 				CFF21C731DC56CCB006E3D55 /* CreateGistViewController.swift */,
-				CF015B1D1DC5235C00C0BA3D /* GitHubAPIManager.swift */,
 				CFF21C751DC5764F006E3D55 /* PersistenceManager.swift */,
 				CF015B1F1DC5237C00C0BA3D /* GistRouter.swift */,
 				CF015B211DC5248800C0BA3D /* Gist.swift */,
@@ -187,6 +187,7 @@
 					CF015B051DC522DA00C0BA3D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = NFHP7Z5VAQ;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -236,10 +237,10 @@
 				CFF21C761DC5764F006E3D55 /* PersistenceManager.swift in Sources */,
 				CFF21C741DC56CCB006E3D55 /* CreateGistViewController.swift in Sources */,
 				CF015B0E1DC522DA00C0BA3D /* DetailViewController.swift in Sources */,
-				CF015B1E1DC5235C00C0BA3D /* GitHubAPIManager.swift in Sources */,
 				CF015B221DC5248800C0BA3D /* Gist.swift in Sources */,
 				CF015B0C1DC522DA00C0BA3D /* MasterViewController.swift in Sources */,
 				CFF21C721DC554CA006E3D55 /* File.swift in Sources */,
+				18268C6B1F719EFB00587ABD /* GitHubAPIManager.swift in Sources */,
 				CF015B201DC5237C00C0BA3D /* GistRouter.swift in Sources */,
 				CF015B0A1DC522DA00C0BA3D /* AppDelegate.swift in Sources */,
 			);
@@ -388,7 +389,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amourinetech.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -406,7 +408,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amourinetech.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

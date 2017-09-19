@@ -22,11 +22,11 @@ class CreateGistViewController: XLFormViewController {
       action: #selector(savePressed(_:)))
   }
   
-  func cancelPressed(_ sender: UIBarButtonItem) {
+  @objc func cancelPressed(_ sender: UIBarButtonItem) {
     let _ = self.navigationController?.popViewController(animated: true)
   }
   
-  func savePressed(_ sender: UIBarButtonItem) {
+  @objc func savePressed(_ sender: UIBarButtonItem) {
     let validationErrors = self.formValidationErrors() as? [Error]
     guard validationErrors?.count == 0 else {
       self.showFormValidationError(validationErrors!.first)

@@ -235,7 +235,7 @@ SFSafariViewControllerDelegate {
     // Dispose of any resources that can be recreated.
   }
   
-  func insertNewObject(_ sender: Any) {
+  @objc func insertNewObject(_ sender: Any) {
     let createVC = CreateGistViewController(nibName: nil, bundle: nil)
     self.navigationController?.pushViewController(createVC, animated: true)
   }
@@ -341,7 +341,7 @@ SFSafariViewControllerDelegate {
   }
   
   // MARK: - Pull to Refresh
-  func refresh(sender: Any) {
+  @objc func refresh(sender: Any) {
     GitHubAPIManager.sharedInstance.isLoadingOAuthToken = false
     nextPageURLString = nil // so it doesn't try to append the results
     GitHubAPIManager.sharedInstance.clearCache()
