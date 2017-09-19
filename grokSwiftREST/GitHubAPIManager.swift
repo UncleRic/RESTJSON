@@ -23,16 +23,16 @@ class GitHubAPIManager {
     static let sharedInstance = GitHubAPIManager()
     
     var isLoadingOAuthToken: Bool = false
-    var OAuthTokenCompletionHandler:((Error?) -> Void)?
+    var OAuthTokenCompletionHandler: ((Error?) -> Void)?
     var OAuthToken: String? {
         set {
             guard let newValue = newValue else {
-                let _ = try? Locksmith.deleteDataForUserAccount(userAccount: "github")
+                _ = try? Locksmith.deleteDataForUserAccount(userAccount: "github")
                 return
             }
             guard let _ = try? Locksmith.updateData(data: ["token": newValue],
                                                     forUserAccount: "github") else {
-                                                        let _ = try? Locksmith.deleteDataForUserAccount(userAccount: "github")
+                                                        _ = try? Locksmith.deleteDataForUserAccount(userAccount: "github")
                                                         return
             }
         }
@@ -46,7 +46,7 @@ class GitHubAPIManager {
     let clientID: String = "1234567890"
     let clientSecret: String = "abcdefghijkl"
     
-    func clearCache() -> Void {
+    func clearCache() {
         let cache = URLCache.shared
         cache.removeAllCachedResponses()
     }
@@ -114,7 +114,7 @@ class GitHubAPIManager {
                 
                 self.OAuthToken = self.parseOAuthTokenResponse(jsonResult)
                 self.isLoadingOAuthToken = false
-                if (self.hasOAuthToken()) {
+                if self.hasOAuthToken() {
                     self.OAuthTokenCompletionHandler?(nil)
                 } else {
                     let error = GitHubAPIManagerError.authCouldNot(reason: "Could not obtain an OAuth token")
@@ -130,10 +130,8 @@ class GitHubAPIManager {
             case "access_token":
                 token = value
             case "scope":
-                // TODO: verify scope
                 print("SET SCOPE")
             case "token_type":
-                // TODO: verify is bearer
                 print("CHECK IF BEARER")
             default:
                 print("got more than I expected from the OAuth token exchange")
@@ -150,7 +148,7 @@ class GitHubAPIManager {
             return nil
         }
         for queryItem in queryItems {
-            if (queryItem.name.lowercased() == "code") {
+            if queryItem.name.lowercased() == "code" {
                 code = queryItem.value
                 break
             }
@@ -158,7 +156,7 @@ class GitHubAPIManager {
         return code
     }
     
-    func printMyStarredGistsWithOAuth2() -> Void {
+    func printMyStarredGistsWithOAuth2() {
         Alamofire.request(GistRouter.getMyStarred())
             .responseString { response in
                 guard let receivedString = response.result.value else {
@@ -170,7 +168,7 @@ class GitHubAPIManager {
     }
     
     // MARK: - API Calls
-    func printPublicGists() -> Void {
+    func printPublicGists() {
         Alamofire.request(GistRouter.getPublic())
             .responseString { response in
                 if let receivedString = response.result.value {
@@ -304,10 +302,10 @@ class GitHubAPIManager {
             }
         }
         
-        let parameters:[String: Any] = [
+        let parameters: [String: Any] = [
             "description": description,
             "isPublic": publicString,
-            "files" : filesDictionary
+            "files": filesDictionary
         ]
         
         Alamofire.request(GistRouter.create(parameters))
@@ -330,7 +328,7 @@ class GitHubAPIManager {
     // MARK: - Helpers
     func imageFrom(urlString: String,
                    completionHandler: @escaping (UIImage?, Error?) -> Void) {
-        let _ = Alamofire.request(urlString)
+        _ = Alamofire.request(urlString)
             .response { dataResponse in
                 // use the generic response serializer that returns Data
                 guard let data = dataResponse.data else {
@@ -372,7 +370,7 @@ class GitHubAPIManager {
     }
     
     func checkUnauthorized(urlResponse: HTTPURLResponse) -> (Error?) {
-        if (urlResponse.statusCode == 401) {
+        if urlResponse.statusCode == 401 {
             self.OAuthToken = nil
             return GitHubAPIManagerError.authLost(reason: "Not Logged In")
         }

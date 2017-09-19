@@ -63,6 +63,7 @@
 		18268C5B1F7188DB00587ABD /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		18268C691F718DAA00587ABD /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		18268C6A1F719EFB00587ABD /* GitHubAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
+		18268C6C1F71A03500587ABD /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = "../../Dropbox/Software Projects/PGECore/PGECore/.swiftlint.yml"; sourceTree = "<group>"; };
 		CF015B061DC522DA00C0BA3D /* grokSwiftREST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grokSwiftREST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF015B091DC522DA00C0BA3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF015B0B1DC522DA00C0BA3D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		5ECCA47776B8B008E1B52780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18268C4F1F71887800587ABD /* XLForm.framework */,
 				18268C5B1F7188DB00587ABD /* PINRemoteImage.framework */,
 				18268C591F7188CB00587ABD /* PINCache.framework */,
 				18268C571F7188BB00587ABD /* Alamofire.framework */,
@@ -115,7 +117,7 @@
 		CF015AFD1DC522DA00C0BA3D = {
 			isa = PBXGroup;
 			children = (
-				18268C4F1F71887800587ABD /* XLForm.framework */,
+				18268C6C1F71A03500587ABD /* .swiftlint.yml */,
 				CF015B081DC522DA00C0BA3D /* grokSwiftREST */,
 				CF015B071DC522DA00C0BA3D /* Products */,
 				5ECCA47776B8B008E1B52780 /* Frameworks */,
@@ -164,6 +166,7 @@
 				CF015B031DC522DA00C0BA3D /* Frameworks */,
 				CF015B041DC522DA00C0BA3D /* Resources */,
 				18268C521F71887900587ABD /* Embed Frameworks */,
+				18268C6D1F71A07900587ABD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -227,6 +230,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18268C6D1F71A07900587ABD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF015B021DC522DA00C0BA3D /* Sources */ = {

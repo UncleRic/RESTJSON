@@ -1,0 +1,18 @@
+disabled_rules:
+- cyclomatic_complexity
+- trailing_whitespace
+- unused_optional_binding
+- identifier_name
+- function_parameter_count
+- function_body_length
+- for_where
+- discarded_notification_center_observer
+excluded:
+- Frameworks
+- Carthage
+- Pods
+- Zip
+line_length: 500
+type_body_length: 600
+function_body_length: 80
+file_length: 2000

@@ -9,11 +9,11 @@
 import UIKit
 
 protocol LoginViewDelegate: class {
-  func didTapLoginButton()
+    func didTapLoginButton()
 }
 class LoginViewController: UIViewController {
-  weak var delegate: LoginViewDelegate?
-  @IBAction func tappedLoginButton() {
-    delegate?.didTapLoginButton()
-  }
+    weak var delegate: LoginViewDelegate?
+    @IBAction func tappedLoginButton() {
+        delegate?.didTapLoginButton()
+    }
 }
